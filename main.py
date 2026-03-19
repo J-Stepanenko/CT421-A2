@@ -9,7 +9,7 @@ COLOR_NAMES = ["red", "green", "blue", "yellow", "orange", "purple", "cyan", "ma
 colorCount = 1
 colorCountMax = 8
 conflicts = 0
-iterationCount = 1
+iterationCount = 1000
 conflict_history = []
 
 
