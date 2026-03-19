@@ -3,25 +3,13 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 
-G = nx.Graph()
-
-G.add_nodes_from(range(5))
-
-G.add_edges_from([
-    (0, 1),
-    (0, 2),
-    (1, 3),
-    (1, 4),
-    (2, 3),
-    (2, 4),
-    (3, 4),
-])
+G = nx.erdos_renyi_graph(10, 0.7, seed=42)
 
 COLOR_NAMES = ["red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta"]
 colorCount = 1
-colorCountMax = 4
+colorCountMax = 8
 conflicts = 0
-iterationCount = 100
+iterationCount = 1
 conflict_history = []
 
 
@@ -68,7 +56,11 @@ nx.draw_networkx(G, pos=nx.spring_layout(G), node_color=color_list, with_labels=
 plt.show()
 plt.figure()
 plt.plot(conflict_history)
+for i in range(1, len(conflict_history) // iterationCount + 1):
+    plt.axvline(x=i * iterationCount, color="gray", linestyle=":", linewidth=0.8,
+                label=f"colour count={i+1}")
 plt.xlabel("Iteration")
 plt.ylabel("Conflicts")
 plt.title("Conflicts over time")
+plt.legend()
 plt.show()
