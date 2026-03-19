@@ -2,13 +2,13 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 
-G = nx.erdos_renyi_graph(10, 0.7, seed=42)
+G = nx.erdos_renyi_graph(15, 0.7, seed=42)
 
-COLOR_NAMES = ["red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta"]
+COLOR_NAMES = ["red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta", "brown", "black"]
 colorCount = 1
-colorCountMax = 8
-pop_size = 10
-generations = 20
+colorCountMax = 10
+pop_size = 100
+generations = 500
 mutation_rate = 0.1
 conflict_history = []
 
