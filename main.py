@@ -68,7 +68,11 @@ nx.draw_networkx(G, pos=nx.spring_layout(G), node_color=color_list, with_labels=
 plt.show()
 plt.figure()
 plt.plot(conflict_history)
+for i in range(1, len(conflict_history) // iterationCount + 1):
+    plt.axvline(x=i * iterationCount, color="gray", linestyle=":", linewidth=0.8,
+                label=f"colour count={i+1}")
 plt.xlabel("Iteration")
 plt.ylabel("Conflicts")
 plt.title("Conflicts over time")
+plt.legend()
 plt.show()
