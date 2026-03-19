@@ -3,25 +3,13 @@ import random
 import networkx as nx
 import matplotlib.pyplot as plt
 
-G = nx.Graph()
-
-G.add_nodes_from(range(5))
-
-G.add_edges_from([
-    (0, 1),
-    (0, 2),
-    (1, 3),
-    (1, 4),
-    (2, 3),
-    (2, 4),
-    (3, 4),
-])
+G = nx.erdos_renyi_graph(10, 0.7, seed=42)
 
 COLOR_NAMES = ["red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta"]
 colorCount = 1
-colorCountMax = 4
+colorCountMax = 8
 conflicts = 0
-iterationCount = 100
+iterationCount = 1
 conflict_history = []
 
 
