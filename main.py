@@ -17,8 +17,6 @@ G.add_edges_from([
     (3, 4),
 ])
 
-strategy = "largest_first"
-
 COLOR_NAMES = ["red", "green", "blue", "yellow", "orange", "purple", "cyan", "magenta"]
 colorCount = 1
 colorCountMax = 4
@@ -26,7 +24,6 @@ conflicts = 0
 iterationCount = 100
 conflict_history = []
 
-colorResult = {}
 
 def colourGraph(graph, colorsAvailable):
     colors = {}
